@@ -49,7 +49,7 @@ void cb(const HttpRequest& req, HttpResponse* resp)
         resp->setBody("hello, world!\n");
     }
     else{
-        std::string doc_root = "/home/lianggui/tinymuduo/src/http/resources/";
+        std::string doc_root = "~/tinymuduo/src/http/resources/";
         std::string filename =  doc_root + req.path();
         struct stat m_file_stat;
 
