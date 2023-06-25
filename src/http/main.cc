@@ -3,6 +3,7 @@
 #include "HttpResponse.h"
 #include "HttpContext.h"
 #include "Timestamp.h"
+#include "AsyncLogging.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -12,11 +13,11 @@
 #include <sys/uio.h>
 #include <fcntl.h>
 
-bool benchmark = false;
+bool benchmark = true;
 
 void cb(const HttpRequest& req, HttpResponse* resp)
 {
-    std::cout << "Headers " << req.methodString() << " " << req.path() << std::endl;
+    //std::cout << "Headers " << req.methodString() << " " << req.path() << std::endl;
     
     // 打印头部
     if (!benchmark)
@@ -49,7 +50,7 @@ void cb(const HttpRequest& req, HttpResponse* resp)
         resp->setBody("hello, world!\n");
     }
     else{
-        std::string doc_root = "~/tinymuduo/src/http/resources/";
+        std::string doc_root = "/home/lianggui/tinymuduo/src/http/resources/";
         std::string filename =  doc_root + req.path();
         struct stat m_file_stat;
 
@@ -90,7 +91,7 @@ void cb(const HttpRequest& req, HttpResponse* resp)
         resp->setStatusMessage("OK");
         resp->setContentType("text/html");
         resp->addHeader("Server", "Muduo");
-        resp->setBody(m_file_address);
+        resp->setBody(std::string(m_file_address, m_file_address + m_file_stat.st_size));
 
         if(m_file_address){
             munmap( m_file_address, m_file_stat.st_size );
@@ -99,8 +100,28 @@ void cb(const HttpRequest& req, HttpResponse* resp)
     }
 }
 
+int kRollSize = 500*1000*1000;
+
+// 异步日志
+std::unique_ptr<AsyncLogging> g_asyncLog;
+
+void asyncOutput(const char* msg, int len)
+{
+    g_asyncLog->append(msg, len);
+}
+
+void setLogging(const char* argv0)
+{
+    Logger::setOutput(asyncOutput);
+    char name[256];
+    strncpy(name, argv0, 256);
+    g_asyncLog.reset(new AsyncLogging(::basename(name), kRollSize));
+    g_asyncLog->start();
+}
+
 int main(int argc, char* argv[])
 {
+    setLogging("LOG");
     EventLoop loop;
     HttpServer server(&loop, InetAddress(8888), "http-server");
     server.setHttpCallback(cb);

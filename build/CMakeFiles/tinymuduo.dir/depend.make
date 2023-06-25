@@ -56,9 +56,13 @@ CMakeFiles/tinymuduo.dir/src/http/HttpServer.cc.o: ../src/http/HttpServer.cc
 CMakeFiles/tinymuduo.dir/src/http/HttpServer.cc.o: ../src/http/HttpServer.h
 
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/base/CurrentThread.h
+CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/base/Thread.h
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/base/Timestamp.h
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/base/noncopyable.h
+CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/logger/AsyncLogging.h
+CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/logger/FileUtil.h
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/logger/FixedBuffer.h
+CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/logger/LogFile.h
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/logger/LogStream.h
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/logger/Logging.h
 CMakeFiles/tinymuduo.dir/src/http/main.cc.o: ../src/net/Acceptor.h

@@ -36,6 +36,32 @@ sys/time.h
 
 ../src/base/noncopyable.h
 
+../src/logger/AsyncLogging.h
+noncopyable.h
+../src/logger/noncopyable.h
+Thread.h
+../src/logger/Thread.h
+FixedBuffer.h
+../src/logger/FixedBuffer.h
+LogStream.h
+../src/logger/LogStream.h
+LogFile.h
+../src/logger/LogFile.h
+vector
+-
+memory
+-
+mutex
+-
+condition_variable
+-
+
+../src/logger/FileUtil.h
+stdio.h
+-
+string
+-
+
 ../src/logger/FixedBuffer.h
 noncopyable.h
 ../src/logger/noncopyable.h
@@ -46,6 +72,14 @@ string.h
 strings.h
 -
 string
+-
+
+../src/logger/LogFile.h
+FileUtil.h
+../src/logger/FileUtil.h
+mutex
+-
+memory
 -
 
 ../src/logger/LogStream.h
@@ -353,6 +387,8 @@ HttpContext.h
 /home/lianggui/tinymuduo/src/http/HttpContext.h
 Timestamp.h
 /home/lianggui/tinymuduo/src/http/Timestamp.h
+AsyncLogging.h
+/home/lianggui/tinymuduo/src/http/AsyncLogging.h
 sys/types.h
 -
 sys/stat.h

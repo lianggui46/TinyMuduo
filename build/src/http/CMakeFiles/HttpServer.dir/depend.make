@@ -36,9 +36,13 @@ src/http/CMakeFiles/HttpServer.dir/HttpServer.cc.o: ../src/http/HttpServer.cc
 src/http/CMakeFiles/HttpServer.dir/HttpServer.cc.o: ../src/http/HttpServer.h
 
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/base/CurrentThread.h
+src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/base/Thread.h
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/base/Timestamp.h
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/base/noncopyable.h
+src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/logger/AsyncLogging.h
+src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/logger/FileUtil.h
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/logger/FixedBuffer.h
+src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/logger/LogFile.h
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/logger/LogStream.h
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/logger/Logging.h
 src/http/CMakeFiles/HttpServer.dir/main.cc.o: ../src/net/Acceptor.h

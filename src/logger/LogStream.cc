@@ -91,8 +91,8 @@ LogStream& LogStream::operator<<(double v)
         char buf[32];
         int len = snprintf(buffer_.current(), kMaxNumericSize, "%.12g", v); 
         buffer_.add(len);
-        return *this;
     }
+    return *this;
 }
 
 LogStream& LogStream::operator<<(char c)

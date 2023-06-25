@@ -27,7 +27,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src/memory SRC_MEMORY)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/mysql SRC_MYSQL)
 
 # 设置编译选项
-set(CXX_FLAGS -g -Wall -std=c++11)
+set(CXX_FLAGS -O2 -Wall -std=c++11)
 
 # 生成动态库 tinymuduo
 add_library(tinymuduo SHARED 

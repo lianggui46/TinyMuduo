@@ -27,7 +27,7 @@ HttpServer::HttpServer(EventLoop *loop,
         std::bind(&HttpServer::onConnection, this, std::placeholders::_1));
     server_.setMessageCallback(
         std::bind(&HttpServer::onMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-    server_.setThreadNum(4);
+    server_.setThreadNum(8);
 }
 
 void HttpServer::start()
@@ -87,7 +87,7 @@ void HttpServer::onRequest(const TcpConnectionPtr& conn, const HttpRequest& req)
     // 判断长连接还是短连接
     bool close = connection == "close" || (req.version() == HttpRequest::kHttp10 && connection != "Keep-Alive");
     // TODO:这里有问题，但是强制改写了
-    //close = true;
+    close = true;
     // 响应信息
     HttpResponse response(close);
     // httpCallback_ 由用户传入，怎么写响应体由用户决定
