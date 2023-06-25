@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/HttpServer.dir/HttpServer.cc.o CMakeFiles/HttpServer.dir/HttpResponse.cc.o CMakeFiles/HttpServer.dir/HttpContext.cc.o CMakeFiles/HttpServer.dir/main.cc.o -o ../../../src/http/HttpServer  -Wl,-rpath,/home/lianggui/tinymuduo/lib ../../../lib/libtinymuduo.so -lpthread -lmysqlclient 

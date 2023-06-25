@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/MemoryPoolTest.dir/MemoryPoolTest.cc.o -o ../../../../src/memory/test/MemoryPoolTest  -Wl,-rpath,/home/lianggui/tinymuduo/lib ../../../../lib/libtinymuduo.so -lpthread -lmysqlclient 

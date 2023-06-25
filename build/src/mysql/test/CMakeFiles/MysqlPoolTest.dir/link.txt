@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/MysqlPoolTest.dir/MysqlPoolTest.cc.o -o ../../../../src/mysql/test/MysqlPoolTest  -Wl,-rpath,/home/lianggui/tinymuduo/lib ../../../../lib/libtinymuduo.so -lpthread -lmysqlclient 
