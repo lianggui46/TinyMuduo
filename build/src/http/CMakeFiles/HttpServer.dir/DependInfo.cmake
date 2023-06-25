@@ -1,17 +1,26 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
   )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/lianggui/tinymuduo/src/http/HttpContext.cc" "/home/lianggui/tinymuduo/build/src/http/CMakeFiles/HttpServer.dir/HttpContext.cc.o"
+  "/home/lianggui/tinymuduo/src/http/HttpResponse.cc" "/home/lianggui/tinymuduo/build/src/http/CMakeFiles/HttpServer.dir/HttpResponse.cc.o"
+  "/home/lianggui/tinymuduo/src/http/HttpServer.cc" "/home/lianggui/tinymuduo/build/src/http/CMakeFiles/HttpServer.dir/HttpServer.cc.o"
+  "/home/lianggui/tinymuduo/src/http/main.cc" "/home/lianggui/tinymuduo/build/src/http/CMakeFiles/HttpServer.dir/main.cc.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/lianggui/tinymuduo/src/http/HttpContext.cc" "src/http/CMakeFiles/HttpServer.dir/HttpContext.cc.o" "gcc" "src/http/CMakeFiles/HttpServer.dir/HttpContext.cc.o.d"
-  "/home/lianggui/tinymuduo/src/http/HttpResponse.cc" "src/http/CMakeFiles/HttpServer.dir/HttpResponse.cc.o" "gcc" "src/http/CMakeFiles/HttpServer.dir/HttpResponse.cc.o.d"
-  "/home/lianggui/tinymuduo/src/http/HttpServer.cc" "src/http/CMakeFiles/HttpServer.dir/HttpServer.cc.o" "gcc" "src/http/CMakeFiles/HttpServer.dir/HttpServer.cc.o.d"
-  "/home/lianggui/tinymuduo/src/http/main.cc" "src/http/CMakeFiles/HttpServer.dir/main.cc.o" "gcc" "src/http/CMakeFiles/HttpServer.dir/main.cc.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../src/base"
+  "../src/net"
+  "../src/net/poller"
+  "../src/http"
+  "../src/timer"
+  "../src/logger"
+  "../src/memory"
+  "../src/mysql"
   )
 
 # Targets to which this target links.
