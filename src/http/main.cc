@@ -111,14 +111,29 @@ void cb(const HttpRequest& req, HttpResponse* resp)
             if(fmt == ".html"){
                 resp->setContentType("text/html"); 
             }
+            else if(fmt == ".css"){
+                resp->setContentType("text/css");
+            }
             else if(fmt == ".png"){
                 resp->setContentType("image/png");
             }
             else if(fmt == ".jpg"){
                 resp->setContentType("image/jpeg");
             }
+            else if(fmt == ".bmp"){
+                resp->setContentType("image/bmp");
+            }
+            else if(fmt == ".gif"){
+                resp->setContentType("image/gif");
+            }
+            else if(fmt == ".gif"){
+                resp->setContentType("image/gif");
+            }
+            else if(fmt == ".mp4"){
+                resp->setContentType("video/mp4");
+            }
             else{
-                resp->setContentType("text/html");
+                resp->setContentType("text/plain");
             }
         }
         
@@ -154,7 +169,7 @@ int main(int argc, char* argv[])
 {
     setLogging("LOG");
     EventLoop loop;
-    HttpServer server(&loop, InetAddress(8888), "http-server");
+    HttpServer server(&loop, InetAddress(80), "http-server");
     server.setHttpCallback(cb);
     server.start();
     loop.loop();
